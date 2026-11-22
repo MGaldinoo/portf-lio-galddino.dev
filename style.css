@@ -10,7 +10,7 @@
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
 html{font-size:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:1rem}
-/* telas grandes: tudo escala junto (notebook, monitor, TV) */
+/* Large screens: the layout scales with the viewport / Telas grandes: o layout acompanha o tamanho da tela */
 @media (min-width:1700px){html{font-size:112.5%}}
 @media (min-width:2200px){html{font-size:137.5%}}
 @media (min-width:3000px){html{font-size:175%}}
@@ -22,7 +22,7 @@ img{max-width:100%}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:0.5rem}
 
-/* fundo azul bebê com movimento leve */
+/* Soft blue animated background / Fundo azul suave com movimento leve */
 .bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:linear-gradient(160deg,#e6f4ff,#d0e8fc 55%,#bddcf8)}
 .bg::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(27,101,159,.22) 1px,transparent 1.5px);background-size:1.75rem 1.75rem;-webkit-mask:radial-gradient(ellipse at 70% 15%,#000,transparent 70%);mask:radial-gradient(ellipse at 70% 15%,#000,transparent 70%)}
 .bg i{position:absolute;border-radius:50%;will-change:transform}
@@ -33,7 +33,7 @@ a{color:inherit;text-decoration:none}
 @keyframes o2{to{transform:translate3d(-8vmax,-6vmax,0) scale(1.1)}}
 @keyframes o3{to{transform:translate3d(7vmax,-6vmax,0) scale(1.15)}}
 
-/* navbar vertical, sempre no lado esquerdo */
+/* Fixed side navigation / Menu lateral fixo */
 .rail{position:fixed;left:0;top:0;bottom:0;z-index:50;width:calc(var(--rail) + env(safe-area-inset-left,0px));background:var(--black);color:#fff;border-right:1px solid rgba(255,255,255,.08);
   display:flex;flex-direction:column;align-items:center;overflow-y:auto;scrollbar-width:none;
   padding:calc(env(safe-area-inset-top,0px) + 1rem) 0.375rem calc(env(safe-area-inset-bottom,0px) + 1rem) calc(env(safe-area-inset-left,0px) + 0.375rem)}
@@ -67,7 +67,7 @@ main{margin-left:calc(var(--rail) + env(safe-area-inset-left,0px))}
 @media (max-width:380px){:root{--rail:3.625rem}.rail nav a{font-size:.62rem}}
 @media (max-height:520px){.rail nav{margin-top:0.875rem;gap:2px}.rail nav a{padding:0.375rem 2px}}
 
-/* hero */
+/* Home section and introduction / Seção inicial e apresentação */
 .hero{position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center}
 #wave{position:absolute;left:0;right:0;bottom:0;width:100%;height:50%;pointer-events:none}
 .hero .wrap{position:relative;z-index:2;padding:clamp(2rem,5vw,3.5rem) 0}
@@ -84,7 +84,7 @@ h1{margin:1.25rem 0 0;font:600 clamp(2.4rem,5.2vw + .5rem,5.4rem)/1.02 var(--f);
 .btn:hover{transform:translateY(-2px);box-shadow:0 0.75rem 1.625rem rgba(27,101,159,.22)}
 .btn.main{background:var(--ink);border-color:var(--ink);color:#fff}
 
-/* cartão de diagnóstico (container query: o texto nunca sai da caixa) */
+/* Code example card / Cartão de exemplo de código */
 .dbg{container-type:inline-size;width:100%;max-width:100%;border-radius:1.375rem;background:var(--black);color:#e8f1fb;box-shadow:0 1.875rem 4.375rem rgba(10,30,60,.32),0 0 0 1px rgba(143,208,255,.2);overflow:hidden}
 .dbg .bar{display:flex;align-items:center;gap:0.375rem;padding:0.875rem 1.125rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .dbg .bar i{width:0.5625rem;height:0.5625rem;border-radius:50%;background:rgba(255,255,255,.18);flex:none}.dbg .bar i:first-child{background:var(--bb)}
@@ -100,13 +100,13 @@ h1{margin:1.25rem 0 0;font:600 clamp(2.4rem,5.2vw + .5rem,5.4rem)/1.02 var(--f);
 .dbg .k{color:var(--bb)}.dbg .s{color:#ffd29a}
 .dbg .msg{margin:0 1rem 1rem;padding:0.6875rem 0.875rem;border-radius:0.75rem;background:rgba(255,255,255,.06);border:1px solid rgba(143,208,255,.22);font-size:clamp(.78rem,3.4cqi,.95rem);line-height:1.5;color:rgba(255,255,255,.88);min-height:4.2em;overflow-wrap:anywhere}
 
-/* resumo: as colunas se ajustam sozinhas */
+/* Quick information cards / Cartões com informações rápidas */
 .facts{margin:clamp(1.75rem,4vw,3rem) 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:1.25rem;overflow:hidden}
 .facts li{padding:1rem 1.375rem;background:rgba(255,255,255,.62);backdrop-filter:blur(0.75rem);-webkit-backdrop-filter:blur(0.75rem);min-width:0}
 .facts small{display:block;color:var(--blue);font-size:.84rem}
 .facts span{display:block;font-size:1rem;line-height:1.4;overflow-wrap:anywhere}
 
-/* seções */
+/* About and project sections / Seções sobre mim e projetos */
 section.sec{padding:clamp(3.5rem,9vw,6.875rem) 0 clamp(1rem,3vw,1.875rem)}
 h2.t{margin:0;font:300 clamp(1.7rem,2.6vw + .8rem,2.5rem)/1.15 var(--f);letter-spacing:-.03em;color:var(--blue)}
 .about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(1rem,4vw,3rem)}
@@ -132,13 +132,13 @@ h2.t{margin:0;font:300 clamp(1.7rem,2.6vw + .8rem,2.5rem)/1.15 var(--f);letter-s
 .wd{display:flex;gap:0.375rem;padding:0.6875rem 0.875rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .wd i{width:0.5rem;height:0.5rem;border-radius:50%;background:rgba(255,255,255,.2)}.wd i:first-child{background:var(--bb)}
 .chat{display:grid;grid-template-columns:minmax(0,1fr) 4.875rem;gap:1rem;align-items:center;padding:clamp(0.875rem,3vw,1.375rem);font-size:.88rem}
-.msgs{display:grid;gap:0.625rem;min-width:0}.msgs span{padding:0.5625rem 0.875rem;border-radius:0.875rem;max-width:92%;overflow-wrap:anywhere}
+.msgs{display:grid;gap:0.625rem;min-width:0}.msgs p{padding:0.5625rem 0.875rem;border-radius:0.875rem;max-width:92%;overflow-wrap:anywhere}
 .u{justify-self:end;background:var(--bb);color:var(--black)}
 .a{background:rgba(255,255,255,.07);border:1px solid rgba(143,208,255,.25)}
 .inp{padding:0.5625rem 0.875rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.5);overflow-wrap:anywhere}
 .orb{width:4.875rem;height:4.875rem;border-radius:50%;background:radial-gradient(circle at 32% 30%,#fff,var(--bb) 40%,#2a6fa8 85%);box-shadow:0 0 2.5rem rgba(143,208,255,.55);justify-self:center}
 
-/* contato e rodapé */
+/* Contact section and footer / Seção de contato e rodapé */
 .cta{padding:clamp(4rem,9vw,6.875rem) 0 2.75rem;background:var(--black);color:#fff;position:relative;overflow:hidden;margin-top:clamp(2.5rem,6vw,5rem)}
 .cta::before{content:"";position:absolute;left:-10vmax;bottom:-18vmax;width:44vmax;height:44vmax;border-radius:50%;background:radial-gradient(circle,rgba(143,208,255,.16),transparent 65%)}
 .cta .wrap{position:relative}
@@ -163,4 +163,41 @@ footer{padding:3.5rem 0 0;text-align:center;color:rgba(255,255,255,.5);font-size
   html{scroll-behavior:auto}.bg i{animation:none}
   .hero .g>div:first-child>*,.dbg{opacity:1;animation:none}
   .js .rv{opacity:1;transform:none;transition:none}.shot img,.btn,.links a{transition:none}
+}
+
+/* Semantic elements use the same layout as the original wrappers.
+   Elementos semânticos mantêm o mesmo layout dos contêineres anteriores. */
+.intro,
+.project-info {
+  min-width: 0;
+}
+
+.projects-title {
+  margin-bottom: 36px;
+}
+
+.project-info .tags {
+  padding: 0;
+  list-style: none;
+}
+
+.project-info .tags li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-footer p {
+  margin: 0;
+}
+
+/* Keep the project preview image aligned with its frame.
+   Mantém a imagem do projeto alinhada ao espaço reservado. */
+.shot {
+  margin: 0;
+}
+
+/* Make sure paragraphs inside the chat preview keep the original appearance.
+   Mantém a aparência original dos parágrafos na prévia do chat. */
+.msgs p {
+  margin: 0;
 }
